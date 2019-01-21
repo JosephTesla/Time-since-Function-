@@ -1,4 +1,4 @@
-function timeSince(since){
+function getTimeSince(since){
    since = since/1000;
    var dateIndices = [
        [60 * 60 * 24 * 365, 'year'],
@@ -25,3 +25,8 @@ function timeSince(since){
    var newTime = `${time[0]} ${time[1]} ago`;
    return newTime;
 }
+
+
+const oldTime = new Date().getTime();
+
+setTimeout(getTimeSince(new Date().getTime() - oldTime), 2000)//returns '2 secs ago'
